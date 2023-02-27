@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qzap/answer.dart';
-import 'package:qzap/question.dart';
+import 'package:qzap/quiz.dart';
+import 'package:qzap/result.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-  final questions = const [
+  final _questions = const [
     {
       'questionText': 'What\'s your favourite color?',
       'answers': ['Black', 'Red', 'Green', 'White'],
@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
   ];
 
   void _answerQuestion() {
-    if (_questionIndex < questions.length) {
+    if (_questionIndex < _questions.length) {
       setState(() {
         _questionIndex += 1;
       });
@@ -42,7 +42,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-
         backgroundColor: const Color.fromARGB(255, 233, 232, 232),
         appBar: AppBar(
           toolbarHeight: 0,
@@ -56,17 +55,13 @@ class _MyAppState extends State<MyApp> {
           //   ),
           // ),
         ),
-        body: _questionIndex < questions.length ? Column(
-          children: <Widget>[
-            Question(
-              questions[_questionIndex]['questionText'] as String,
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ) : const Center(child: Text('Complete'),),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
+              )
+            : const Result(),
       ),
     );
   }
