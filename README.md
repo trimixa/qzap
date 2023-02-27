@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 # ColorCode
-argb(255, 32, 38, 46)
-argb(255, 145, 49, 117)
-argb(255, 205, 88, 136)
-argb(255, 233, 232, 232)
+Color.fromARGB(255, 32, 38, 46)
+Color.fromARGB(255, 145, 49, 117)
+Color.fromARGB(255, 205, 88, 136)
+Color.fromARGB(255, 233, 232, 232)

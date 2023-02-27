@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
           //   ),
           // ),
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: <Widget>[
             Question(
               questions[_questionIndex]['questionText'] as String,
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               return Answer(_answerQuestion, answer);
             }).toList()
           ],
-        ),
+        ) : const Center(child: Text('Complete'),),
       ),
     );
   }
