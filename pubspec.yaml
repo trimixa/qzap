@@ -88,3 +88,26 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: wellington
+      fonts:
+        - asset: assets/TTWellingtons-Regular.ttf
+    - family: visby
+      fonts:
+        - asset: assets/VisbyCF-Regular.otf
+        - asset: assets/VisbyCF-Bold.otf
+        - asset: assets/VisbyCF-BoldOblique.otf
+        - asset: assets/VisbyCF-DemiBold.otf
+        - asset: assets/VisbyCF-DemiBoldOblique.otf
+        - asset: assets/VisbyCF-ExtraBold.otf
+        - asset: assets/VisbyCF-ExtraBoldOblique.otf
+        - asset: assets/VisbyCF-Heavy.otf
+        - asset: assets/VisbyCF-HeavyOblique.otf
+        - asset: assets/VisbyCF-Light.otf
+        - asset: assets/VisbyCF-LightOblique.otf
+        - asset: assets/VisbyCF-Medium.otf
+        - asset: assets/VisbyCF-MediumOblique.otf
+        - asset: assets/VisbyCF-Regular.otf
+        - asset: assets/VisbyCF-RegularOblique.otf
+        - asset: assets/VisbyCF-Thin.otf
+        - asset: assets/VisbyCF-ThinOblique.otf

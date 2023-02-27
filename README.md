@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# ColorCode
+argb(255, 32, 38, 46)
+argb(255, 145, 49, 117)
+argb(255, 205, 88, 136)
+argb(255, 233, 232, 232)
