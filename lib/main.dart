@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Green', 'score': 3},
         {'text': 'White', 'score': 1},
       ],
+      'animation': 'assets/animation/favouriteColor.json',
     },
     {
       'questionText': 'What\'s your favourite animal?',
@@ -34,6 +35,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Elephant', 'score': 5},
         {'text': 'Lion', 'score': 9},
       ],
+      'animation': 'assets/animation/favouriteAnimal.json',
     },
     {
       'questionText': 'What\'s your favourite instructor?',
@@ -43,6 +45,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Max', 'score': 3},
         {'text': 'Max', 'score': 3},
       ],
+      'animation': 'assets/animation/favouriteTeacher.json',
     },
   ];
 
@@ -65,28 +68,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 233, 232, 232),
-        appBar: AppBar(
-          toolbarHeight: 0,
-          backgroundColor: const Color.fromARGB(255, 32, 38, 46),
-          // foregroundColor: const Color.fromARGB(255, 255, 251, 245),
-          // title: Container(
-          //   alignment: Alignment.center,
-          //   child: const Text(
-          //     'Welcome to QZAP',
-          //     style: TextStyle(fontFamily: 'wellington'),
-          //   ),
-          // ),
-        ),
-        body: _questionIndex < _questions.length
-            ? Quiz(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions,
-              )
-            : Result(_totalScore, _resetQuiz),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 233, 232, 232),
+          appBar: AppBar(
+            backgroundColor: const Color.fromARGB(255, 32, 38, 46),
+            foregroundColor: const Color.fromARGB(255, 255, 251, 245),
+          ),
+          body: _questionIndex < _questions.length
+              ? Quiz(
+                  answerQuestion: _answerQuestion,
+                  questionIndex: _questionIndex,
+                  questions: _questions,
+                )
+              : Result(_totalScore, _resetQuiz),
+        ));
   }
 }
